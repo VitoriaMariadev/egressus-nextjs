@@ -5,6 +5,8 @@
     align-items: center;
     justify-content: center;
     background-color: #FAF7F7;
+    position: fixed;
+    z-index: 1;
 }
 
 .logo{
