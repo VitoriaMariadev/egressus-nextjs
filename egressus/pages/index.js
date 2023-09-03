@@ -8,8 +8,11 @@ import { useState } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const [imagem, setImagem] = useState('/images/imagem_um.png')
   const [indexLista, setindexLista] = useState(1)
+
+  setInterval( function(){
+    carrossel()
+  }, 3000)
 
   const carrossel = () => {
     if(indexLista !== 3) {
@@ -19,8 +22,18 @@ export default function Home() {
       setindexLista(1)  
 }
 }
-  
-  setInterval(carrossel, 5000);
+
+  const passarCarrosselUm = () => {
+    setindexLista(1)
+  }
+
+  const passarCarrosselDois = () => {
+    setindexLista(2)
+  }
+
+  const passarCarrosselTres = () => {
+    setindexLista(3)
+  }
 
   return (
     <>
@@ -43,9 +56,34 @@ export default function Home() {
         </div>
 
         <div className={styles.ponto}>
-          <div className={styles.pontoUm}></div>
-          <div className={styles.pontoDois}></div>
-          <div className={styles.pontoTres}></div>
+
+        {indexLista === 1 &&(
+            <>
+            <div className={styles.pontoUm} style={{backgroundColor:'#00996D'}}></div>
+            <div className={styles.pontoDois} onClick={passarCarrosselDois}></div>
+            <div className={styles.pontoTres} onClick={passarCarrosselTres}></div>
+            
+            </>
+          )}
+          
+          {indexLista === 2 &&(
+            <>
+            <div className={styles.pontoUm} onClick={passarCarrosselUm}></div>
+            <div className={styles.pontoDois} style={{backgroundColor:'#00996D'}}></div>
+            <div className={styles.pontoTres} onClick={passarCarrosselTres}></div>
+            
+            </>
+          )}
+          
+          {indexLista === 3 &&(
+            <>
+            <div className={styles.pontoUm} onClick={passarCarrosselUm}></div>
+            <div className={styles.pontoDois} onClick={passarCarrosselDois}></div>
+            <div className={styles.pontoTres} style={{backgroundColor:'#00996D'}}></div>
+            
+            </>
+          )}
+          
         </div>
       </main>
     </>
