@@ -64,7 +64,9 @@ export const Header = () => {
                 </div>
 
                 <div className={styles.usuarioPerfil}>
-                    <div className={styles.usuarioPerfilIcon}></div>
+                    <div className={styles.usuarioPerfilIcon}>
+                        <p>d</p>
+                    </div>
                 </div>
             </div>
 
