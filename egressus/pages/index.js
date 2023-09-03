@@ -3,16 +3,12 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { Header } from '@/components/header/header'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const [indexLista, setindexLista] = useState(1)
-
-  setInterval( function(){
-    carrossel()
-  }, 3000)
 
   const carrossel = () => {
     if(indexLista !== 3) {
@@ -34,6 +30,13 @@ export default function Home() {
   const passarCarrosselTres = () => {
     setindexLista(3)
   }
+
+  useEffect(() => {
+    const interval = setInterval(carrossel, 3000)
+
+    // Limpa o intervalo quando o componente é desmontado
+    return () => clearInterval(interval)
+  }, [indexLista])
 
   return (
     <>

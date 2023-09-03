@@ -38,6 +38,7 @@
   background-color: #fff;
   border-radius: 50%;
   border: solid 3px #465B55;
+  cursor: pointer;
 }
 
 .pontoDois{
@@ -46,6 +47,7 @@
   background-color: #fff;
   border-radius: 50%;
   border: solid 3px #465B55;
+  cursor: pointer;
 }
 
 .pontoTres{
@@ -54,6 +56,7 @@
   background-color: #fff;
   border-radius: 50%;
   border: solid 3px #465B55;
+  cursor: pointer;
 }
 
 @keyframes opacidade {
